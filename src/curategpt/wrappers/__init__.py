@@ -32,6 +32,8 @@ __all__ = [
     "FAIRSharingWrapper",
     "FilesystemWrapper",
     "PaperQAWrapper",
+    "DDICodebookWrapper",
+    "FullDocumentWrapper",
     "get_wrapper",
 ]
 
@@ -103,6 +105,10 @@ def get_wrapper(name: str, **kwargs) -> BaseWrapper:
         OntologyWrapper  # noqa
     from curategpt.wrappers.paperqa.paperqawrapper import \
         PaperQAWrapper  # noqa
+    from curategpt.wrappers.social.ddi_codebook_wrapper import \
+        DDICodebookWrapper  # noqa
+    from curategpt.wrappers.social.full_document_wrapper import \
+        FullDocumentWrapper  # noqa
 
     for c in get_all_subclasses(BaseWrapper):
         if c.name == name:
